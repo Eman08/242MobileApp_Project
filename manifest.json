@@ -1,0 +1,22 @@
+{
+    "short_name": "Krosan",
+    "name": "Krosan Furniture",
+    "description": "Shop the best furniture online at Krosan Furniture!",
+    "start_url": "./homepage/homepage.html",
+    "scope": "/",
+    "display": "fullscreen",
+    "icons": [
+    {
+    "src": "./assets/appLogo192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+    },
+    {
+    "src": "./assets/appLogo512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+    }
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF"
+    }

@@ -1,0 +1,139 @@
+body{
+  
+    background-color: white;
+    /* #5E4749 */
+}
+
+.card{
+    margin-bottom: -10vh;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    margin-top: 2rem;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.totals tr td{
+    font-size: 13px
+}
+.footer{
+    background-color: #eeeeeea8
+}
+.footer span{
+    font-size: 12px
+}
+.product-qty span{
+    font-size: 10px;
+    color: gray;
+}
+.table{
+    width: 100%;
+    left: 0;
+    font-size: 12px;
+}
+
+
+
+.navbar{
+<<<<<<< HEAD
+    
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+=======
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.bigLogo{
+  width: 70%;
+  margin: auto;
+>>>>>>> fe7fed273dfe943c5ab2106cf7d6da060329c3ec
+}
+
+
+.headerLogoSpace{
+<<<<<<< HEAD
+    visibility: visible;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  
+  
+  }
+  
+  .headerLogo{
+    position: relative;
+    width: 30%;
+    margin: auto;
+  
+  }
+  
+  .navbar-toggler{
+    position: fixed;
+    visibility: visible;
+    position: absolute;
+    top:1.4vh;
+    width: 3.5rem;
+    height: auto;
+    padding: 1px;
+    border: 0;
+  
+  }
+  
+  #navbarToggleExternalContent{
+    
+    background-color: black;
+    
+  }
+
+  .navbar1{
+  
+
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    left: 44vh;
+    margin-top: 2vh;
+    width: 15vw;
+  }
+  
+=======
+  visibility: visible;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+
+}
+
+.headerLogo{
+  position: relative;
+  width: 30%;
+  margin: auto;
+
+}
+
+.navbar-toggler{
+  position: fixed;
+  visibility: visible;
+  position: absolute;
+  top:1.4vh;
+  width: 3.5rem;
+  height: auto;
+  padding: 1px;
+  border: 0;
+
+}
+
+#navbarToggleExternalContent{
+  background-color: black;
+  
+}
+
+.navbar1{
+
+  display: inline-block;
+  text-align: right;
+  margin-left: 80vw;
+  margin-top: 2vh;
+  width: 15vw;
+}
+
+>>>>>>> fe7fed273dfe943c5ab2106cf7d6da060329c3ec

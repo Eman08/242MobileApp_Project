@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./payment.js" type="module"></script>
+    <link rel="stylesheet" href="./payment.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module" src="./address.js"></script>
+    
+</head>
+
+<script>
+
+  console.log("myCHeck")
+
+  var request = window.indexedDB.open("Krosan", );
+  request.onerror = function(event) {
+  console.log("Database error: ", event.target.error);
+  };
+  request.onsuccess = function(event) {
+  var db = event.target.result;
+  console.log("Database: ", db);
+  console.log("Object store names: ", db.objectStoreNames);
+  
+  };
+  
+  request.onupgradeneeded = function(event) {
+  var db = event.target.result;
+  db.createObjectStore("customers",
+  { keyPath: "username" }
+  );
+  };
+  
+  // var request = window.indexedDB.open("Krosan", 2);
+  // request.onsuccess = function(event) {
+  // ///
+  // var db = event.target.result;
+  // var orderData = [
+  // {"username": "abeera24", "pNo": "+971987876543", "sName": "Al Nahda", "bldgName": "ABC Tower", "fNo":"1202", "Emirate":"Dubai"}
+  // ];
+  // ///
+  // var orderTransaction = db.transaction("Orders", "readwrite");
+  // orderTransaction.onerror = function(event) {
+  // console.log("Error: ", event.target.error);
+  // };
+  // ////
+  // var orderStore = orderTransaction.objectStore("Orders");
+  // for (var i = 0; i < orderData.length; i++) {
+  // orderStore.add(orderData[i]);
+  // }
+  
+  // };
+
+  var request = window.indexedDB.open("Krosan", 2);
+  request.onsuccess = function(event) {
+
+    var db = event.target.result;
+        // Start a transaction and get the object store
+        var transaction = db.transaction(["Orders"], "readwrite");
+        var objectStore = transaction.objectStore("Orders");
+        // Add a new record to the object store
+        var record = { name: "Abeera24", age: 21, email: "john.doe@example.com" };
+        var request = objectStore.add(record);
+  };
+
+
+  
+  
+  
+    </script>
+
+<body style="font-family: Montserrat; background-color: #f8f8f8;">
+    <div id="main_head">
+        <i class="fa-solid fa-chevron-left" onclick="history.back()" style="margin-left: 2vh; margin-top: 50px; color:lightslategray; margin-right: 4vh; position: absolute;"></i>
+        <p class="heading_main" >Payment</p>
+      </div>
+      <div class="row mt-2 p-3 fw-bold">
+        <p>Choose A Shipping Address</p>
+    </div>
+        <p id="change"> Change</p>
+       
+      <br>
+      <img src="../assets/map.png" width="100%" height="200px"id="img">
+      <form class="row g-3 p-3" style="font-size: 14px; margin-left: 1vw;">
+        <div class="col-xs-6">
+          <label for="inputEmail4" class="form-label" >Phone Number</label>
+          <input type="number" class="form-control" placeholder="+971541234567" id="inputEmail4">
+          <span id="phone"></span>
+        </div>
+        <div class="col-xs-6">
+          <label for="inputPassword4" class="form-label">Street Name</label>
+          <input type="text" class="form-control" placeholder="Al Fakeh Bin Basheer" id="inputPassword4">
+          <span id="street"></span>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Building Name</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <span id="address"></span>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Flat Number</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <span id="flat"></span>
+        </div>
+        
+        <div class="col-xs-1">
+          <label for="inputState" class="form-label">Emirate</label>
+          <select id="inputState" class="form-select" style="color:lightslategrey">
+            <option selected>Sharjah</option>
+            
+            <option>Dubai</option>
+            <option>Ajman</option>
+            <option>Fujairah</option>
+            <option>Ras Al Khaimah</option>
+            <option>Umm Al Quwain</option>
+            <option>Abu Dhabi</option>
+          </select>
+        </div>
+        
+        <div class="buttons">
+            <input type = 'button' id="add_to_cart" style="margin-left: 15vw;" value = "Confirm"> </button>
+         </div>
+       
+      </form>
+      <!-- <div id="text_address" class="p-4">
+        <i class="fas fa-home"></i>
+        <div class="address">
+        <p>UOWD, Knowledge Park Building, Dubai, United Arab Emirates <br> Second Floor</p>
+        </div>
+        <hr style="width: 100%; color: #AEAEAE">
+        <i class="fas fa-phone"></i>
+        <div class="phone_no">
+        <p>+971 54 123 4567</p>
+        
+        </div>
+        <hr style="width: 100%;color: #AEAEAE">
+      </div>
+
+      <div class="buttons">
+        <button id="add_to_cart" type="submit" onclick="location.href='../cart/cart.html'"> Proceed to Payment</button>
+     </div> -->
+</body>
+<script src="/app.js" type="text/javascript"></script>
+</html>

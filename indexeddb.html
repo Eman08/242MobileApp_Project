@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IndexedDB Playground</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/gih.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,600,900" rel="stylesheet">
+</head>
+<body class="playground-page">
+
+<script>
+
+var request = window.indexedDB.open("Krosan", );
+request.onerror = function(event) {
+console.log("Database error: ", event.target.error);
+};
+request.onsuccess = function(event) {
+var db = event.target.result;
+console.log("Database: ", db);
+console.log("Object store names: ", db.objectStoreNames);
+
+};
+
+request.onupgradeneeded = function(event) {
+var db = event.target.result;
+db.createObjectStore("customers",
+{ keyPath: "passport_number" }
+);
+};
+
+var request = window.indexedDB.open("Krosan", 2);
+// request.onsuccess = function(event) {
+// ///
+// var db = event.target.result;
+// var orderData = [
+// {"username": "abeera24", "pNo": "+971987876543", "sName": "Al Nahda", "bldgName": "ABC Tower", "fNo":"1202", "Emirate":"Dubai"}
+// ];
+// ///
+// var orderTransaction = db.transaction("Orders", "readwrite");
+// orderTransaction.onerror = function(event) {
+// console.log("Error: ", event.target.error);
+// };
+// ////
+// var orderStore = orderTransaction.objectStore("Orders");
+// for (var i = 0; i < orderData.length; i++) {
+// orderStore.add(orderData[i]);
+// }
+
+// };
+request.onsuccess = function(event) {
+var db = event.target.result;
+var customerData = [
+{"passport_number": "6651", "first_name": "Tal", "last_name": "Ater"},
+{"passport_number": "7727", "first_name": "Archie", "last_name": "Stevens"}
+];
+var customerTransaction = db.transaction("customers", "readwrite");
+customerTransaction.onerror = function(event) {
+console.log("Error: ", event.target.error);
+};
+var customerStore = customerTransaction.objectStore("customers");
+for (var i = 0; i < customerData.length; i++) {
+customerStore.add(customerData[i]);
+}
+};
+
+
+
+
+
+  </script>
+
+  <div id="background-image"></div>
+  <header>
+    <div class="hotel-slogan">
+      <h1>IndexedDB Playground</h1>
+    </div>
+  </header>
+
+  <div class="container-fluid" id="instructions-container">
+    <div class="row">
+      <div id="instructions-code">
+        <h2>Code that should be added to the page goes inside indexeddb.html</h2>
+
+      </div>
+      <div id="instructions-console">
+        <h2>Console code should be run in the browser’s console.</h2>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

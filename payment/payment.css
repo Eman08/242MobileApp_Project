@@ -1,0 +1,123 @@
+body{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+#main_head{
+    box-sizing:border-box;
+    height: 16vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    min-width: 100%;
+    margin-top: -5vh;
+    background-color: white;
+   
+}
+
+.heading_main{
+    
+    margin-left: 7vh;
+    font-size: 20px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-weight: 800;
+    
+
+}
+
+.img{
+    width: 100%;
+    object-fit: contain;
+    
+}
+
+.fa-home{
+    margin-top: 1vh;
+    color: grey;
+    size: 15;
+}
+
+.fa-phone{
+    margin-top: 1vh;
+    color: grey;
+    size: 15;
+}
+
+.address{
+    height:5vh;
+    margin-top: -3vh;
+    width: 75%;
+    margin-left: 10vw;
+    font-size: 12px;
+    margin-bottom: 3vh;
+}
+
+#change{
+    margin-left: 80vw;
+    margin-top: -6.5vh;
+    font-size: 13px;
+}
+
+.phone_no{
+    height:2.5vh;
+    margin-top: -3vh;
+    width: 75%;
+    margin-left: 10vw;
+    font-size: 12px;
+    margin-bottom: 3vh;
+}
+
+
+#payment{
+    margin-left: 19vw;
+}
+#buy_now, #add_to_cart, #payment{
+    
+    margin-bottom: 12vh;
+    font-size: 14px;
+    margin-top: 2vh;
+    border-radius: 50px;
+    background-color: #708D8D;
+    color:whitesmoke;
+    width:250px;
+    display: inline-block;
+    border:none;
+    height: 45px;
+    box-shadow:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+
+}
+
+#add_to_cart{
+    margin-left: 18vw;
+}
+
+.card_images{
+    margin-left: 30vw;
+    margin-bottom: -4vh;
+}
+
+.card_field{
+    font-size: 12px;
+}
+
+body{background: #f5f5f5}.rounded{border-radius: 1rem}.nav-pills .nav-link{color: #555}.nav-pills .nav-link.active{color: white}input[type="radio"]{margin-right: 5px}.bold{font-weight:bold}
+
+.confirmed{
+    display: block;
+    border:1px solid lightgray;
+    text-align: center;
+    margin-top: 15vh;
+    border-radius: 5px;
+    height: 25vh;
+    width: 40vh;
+    margin-left:3vh;
+    padding: 15px;
+    background-color: white;
+}
+
+.link{
+    margin-top: 2vh;
+    display: block;
+}
